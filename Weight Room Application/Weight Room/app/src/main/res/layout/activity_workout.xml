@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_main"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/createTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/workouts"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/customWorkoutName"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:hint="@string/enter_a_workout_name"
+        android:layout_below="@id/createTitle"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:padding="5dp">
+    </EditText>
+
+    <Button
+        android:id="@+id/addCustomWorkoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:background="@drawable/button_bg"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:layout_below="@id/customWorkoutName">
+    </Button>
+
+    <TextView
+        android:id="@+id/selectAWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_below="@id/addCustomWorkoutButton">
+    </TextView>
+
+    <ListView
+        android:id="@+id/listViewWorkouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectAWorkout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    </ListView>
+
+</RelativeLayout>

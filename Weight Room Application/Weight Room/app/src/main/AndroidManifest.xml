@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.healthimprovementapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+               <action android:name="android.intent.action.MAIN"/>
+               <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".WorkoutActivity" />
+        <activity android:name=".com.example.healthimprovementapp.WorkoutExercisesActivity" />
+        <activity android:name=".Welcome" />
+        <activity android:name=".AddWorkoutActivity"/>
+        <activity android:name=".UserHistoryActivity"/>
+        <activity android:name=".DiscoverWorkoutsActivity"/>
+
+    </application>
+
+</manifest>

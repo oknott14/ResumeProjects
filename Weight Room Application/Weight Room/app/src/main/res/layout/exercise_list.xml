@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/exerciseList" android:background="@drawable/button_selector">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exerciseNameString"
+        android:text="@string/exercise_name"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exerciseName"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="5dp"
+        android:layout_toRightOf="@+id/exerciseNameString"
+        android:layout_alignBaseline="@+id/exerciseNameString"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weight"
+        android:text="@string/weight"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="5dp"
+        android:layout_below="@+id/exerciseName" />
+
+    <TextView
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightView"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:padding="2dp"
+        android:layout_toRightOf="@+id/weight"
+        android:layout_below="@+id/exerciseName"
+        android:layout_alignBottom="@+id/weight"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sets"
+        android:text="@string/sets"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:layout_below="@+id/exerciseName"
+        android:layout_toRightOf="@+id/weightView"
+        android:layout_alignBottom="@+id/weightView"/>
+
+    <TextView
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/setsView"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:layout_below="@+id/exerciseName"
+        android:layout_toRightOf="@+id/sets"
+        android:layout_alignBottom="@+id/sets"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reps"
+        android:text="@string/reps"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:padding="5dp"
+        android:layout_below="@+id/exerciseName"
+        android:layout_toRightOf="@+id/setsView"
+        android:layout_alignBottom="@+id/setsView"/>
+
+    <TextView
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/repsView"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_toRightOf="@+id/reps"
+        android:layout_below="@+id/exerciseName"
+        android:layout_alignBottom="@+id/reps"
+        android:layout_alignEnd="@+id/exerciseName"/>
+
+</RelativeLayout>

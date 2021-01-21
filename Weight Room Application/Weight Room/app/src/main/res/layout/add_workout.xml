@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addWorkoutName"
+        android:textSize="50dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addWorkoutAddExerciseString"
+        android:text="@string/add_exercise"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_below="@+id/addWorkoutName"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addWorkoutExerciseNameString"
+        android:text="@string/exercise_name"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/addWorkoutAddExerciseString"
+        android:layout_alignBottom="@+id/addWorkoutExerciseName"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addWorkoutExerciseName"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_below="@+id/addWorkoutAddExerciseString"
+        android:layout_toRightOf="@+id/addWorkoutExerciseNameString"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/addWorkoutNumSetsString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/number_of_sets"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:layout_below="@+id/addWorkoutExerciseNameString"
+        android:layout_alignBottom="@+id/numSets"/>
+
+    <EditText
+        android:id="@+id/numSets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addWorkoutExerciseNameString"
+        android:layout_toRightOf="@+id/addWorkoutNumSetsString"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/addWorkoutNumRepsString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addWorkoutNumSetsString"
+        android:layout_alignBottom="@+id/numReps"
+        android:gravity="center"
+        android:text="@string/number_of_reps"
+        android:textColor="@color/white"
+        android:textSize="15dp"/>
+
+    <EditText
+        android:id="@+id/numReps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_below="@+id/numSets"
+        android:layout_toRightOf="@+id/addWorkoutNumRepsString"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/addWorkoutWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addWorkoutNumRepsString"
+        android:layout_alignBottom="@+id/numWeight"
+        android:gravity="center_vertical"
+        android:text="Enter the Weight:"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/numWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_below="@+id/numReps"
+        android:layout_toRightOf="@+id/addWorkoutWeight"
+        android:layout_margin="5dp"/>
+
+    <LinearLayout
+        android:id="@+id/buttonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_below="@+id/addWorkoutWeight"
+        android:layout_margin="5dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/addWorkoutAddExerciseButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/add_exercise_button"
+            android:background="@drawable/button_selector"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/addWorkoutSubmitButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/addWorkoutAddExerciseButton"
+            android:text="@string/submit_workout"
+            android:background="@drawable/button_selector"
+            android:layout_weight="1.2"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/addWorkoutCancelButton"
+            android:text="@string/cancel"
+            android:background="@drawable/button_selector"
+            android:layout_toRightOf="@+id/addWorkoutSubmitButton"
+            android:layout_alignParentEnd="true"
+            android:layout_weight=".8"/>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addWorkoutExerciseList"
+        android:background="@color/background"
+        android:layout_below="@+id/buttonGroup"/>
+
+
+
+</RelativeLayout>

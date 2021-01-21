@@ -1,0 +1,125 @@
+Index: app/src/main/java/com/example/healthimprovementapp/AddWorkoutActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.healthimprovementapp\r\n\r\nimport android.app.Activity\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.*\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.Exercise\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.Workout\r\nimport kotlinx.android.synthetic.main.list_item.view.*\r\n\r\nclass AddWorkoutActivity : Activity() {\r\n    private var workoutName : String? = null\r\n    private var workoutID : String? = null\r\n    private lateinit var workout : Workout\r\n\r\n    private lateinit var mNameTextView : TextView\r\n    private lateinit var mExerciseNameEditText : EditText\r\n    private lateinit var mAddExerciseButton : Button\r\n    private lateinit var mSubmitWorkoutButton : Button\r\n    private lateinit var mExerciseListView : ListView\r\n\r\n    private lateinit var mExerciseListAdapter : ExerciseListAdapter\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n\r\n        setContentView(R.layout.add_workout)\r\n\r\n        if (intent != null) {\r\n            workoutName = intent.getStringExtra(WORKOUT_NAME)\r\n            workoutID = intent.getStringExtra(WORKOUT_ID)\r\n            workout = Workout(workoutID!!, workoutName!!, ArrayList<Exercise>())\r\n        } else {\r\n            finish()\r\n        }\r\n\r\n        //Get references to views and set the workout name\r\n        mNameTextView = findViewById(R.id.addWorkoutName)\r\n        mNameTextView.text = workoutName\r\n        mExerciseNameEditText = findViewById(R.id.addWorkoutExerciseName)\r\n        mAddExerciseButton = findViewById(R.id.addWorkoutAddExerciseButton)\r\n        mSubmitWorkoutButton = findViewById(R.id.addWorkoutSubmitButton)\r\n\r\n        //set up the list view and adapter\r\n        mExerciseListView = findViewById(R.id.addWorkoutExerciseList)\r\n        mExerciseListAdapter = ExerciseListAdapter(this)\r\n        mExerciseListView.adapter = mExerciseListAdapter\r\n\r\n        //TODO -> add a button or listener to remove exercises from the list\r\n        //onclick listener for adding exercises to the list\r\n        mAddExerciseButton.setOnClickListener {\r\n            val exerciseName = mExerciseNameEditText.text.toString()\r\n            val numSets = findViewById<EditText>(R.id.numSets).text.toString().toInt()\r\n            val numReps = findViewById<EditText>(R.id.numReps).text.toString().toInt()\r\n            val numWeight = findViewById<EditText>(R.id.numWeight).text.toString().toInt()\r\n\r\n            if (exerciseName != null && exerciseName != \"\") {\r\n                addExercise(exerciseName, numSets, numReps, numWeight)\r\n            } else {\r\n                Toast.makeText(this, \"Please enter an exercise name\", Toast.LENGTH_LONG)\r\n            }\r\n        }\r\n\r\n        mSubmitWorkoutButton.setOnClickListener {\r\n            if (mExerciseListAdapter.count == 0) {\r\n                //TODO -> add an alert dialog to ask if they want to submit a workout with no exercises\r\n            } else {\r\n                val workoutString = workout.toString()\r\n                Log.i(TAG, \"Submitting Workout: $workoutString\")\r\n\r\n                Toast.makeText(this,\"Submitting\",Toast.LENGTH_SHORT)\r\n                val returnIntent = Intent().putExtra(WORKOUT_NAME, workout)\r\n                setResult(RESULT_OK, returnIntent)\r\n                finish()\r\n            }\r\n        }\r\n    }\r\n\r\n    private fun addExercise(exerciseName : String, numSets: Int, numReps: Int, numWeight: Int) {\r\n        val newExercise = Exercise(exerciseName, numSets, numReps, numWeight)\r\n        workout.exerciseList.add(newExercise) //Adds the new exercise to this workout's exercise list\r\n        mExerciseListAdapter.add(newExercise) //Adds this new exercise to the visible exercise list on the UI\r\n\r\n        Log.i(TAG, \"Exercise added (Name: $exerciseName, Sets: $numSets, Reps: $numReps, Weight: $numWeight\")\r\n    }\r\n\r\n    companion object {\r\n        val TAG = \"Mine-AddWorkoutActivity:\"\r\n        const val WORKOUT_NAME = \"WORKOUT_NAME\"\r\n        const val WORKOUT_ID = \"WORKOUT_ID\"\r\n        const val WORKOUT_EXERCISES = \"WORKOUT_EXERCISES\"\r\n        val USER_ID = \"USER_ID\"\r\n        val WORKOUT_TYPE = \"WORKOUT_TYPE\"\r\n        val BULK_UP = \"BULK_UP\"\r\n        val WEIGHT_LOSS = \"WEIGHT_LOSS\"\r\n        val ENDURANCE = \"ENDURANCE\"\r\n        val FLEXIBILITY = \"FLEXIBILITY\"\r\n        const val REQUEST_CODE = 2\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/healthimprovementapp/AddWorkoutActivity.kt	(revision 3629d9f903088e8aa83367d402855b015d3dd7a6)
++++ app/src/main/java/com/example/healthimprovementapp/AddWorkoutActivity.kt	(date 1606860647575)
+@@ -8,12 +8,18 @@
+ import android.widget.*
+ import com.example.healthimprovementapp.com.example.healthimprovementapp.Exercise
+ import com.example.healthimprovementapp.com.example.healthimprovementapp.Workout
++import com.google.firebase.database.DatabaseReference
++import com.google.firebase.database.FirebaseDatabase
+ import kotlinx.android.synthetic.main.list_item.view.*
+ 
+ class AddWorkoutActivity : Activity() {
+     private var workoutName : String? = null
+     private var workoutID : String? = null
+     private lateinit var workout : Workout
++    private lateinit var databaseWorkouts: DatabaseReference
++    private lateinit var workoutType : String
++    private lateinit var uid: String
++
+ 
+     private lateinit var mNameTextView : TextView
+     private lateinit var mExerciseNameEditText : EditText
+@@ -32,6 +38,12 @@
+             workoutName = intent.getStringExtra(WORKOUT_NAME)
+             workoutID = intent.getStringExtra(WORKOUT_ID)
+             workout = Workout(workoutID!!, workoutName!!, ArrayList<Exercise>())
++            workoutType = intent.getStringExtra(WORKOUT_TYPE) as String
++            uid = intent.getStringExtra(USER_ID) as String
++
++            //Access the workout's node in the database
++            databaseWorkouts = FirebaseDatabase.getInstance().getReference("workouts")            //TEST
++
+         } else {
+             finish()
+         }
+@@ -58,6 +70,11 @@
+ 
+             if (exerciseName != null && exerciseName != "") {
+                 addExercise(exerciseName, numSets, numReps, numWeight)
++                mExerciseNameEditText.setText("")
++                findViewById<EditText>(R.id.numSets).setText("")
++                findViewById<EditText>(R.id.numReps).setText("")
++                findViewById<EditText>(R.id.numWeight).setText("")
++
+             } else {
+                 Toast.makeText(this, "Please enter an exercise name", Toast.LENGTH_LONG)
+             }
+@@ -71,6 +88,12 @@
+                 Log.i(TAG, "Submitting Workout: $workoutString")
+ 
+                 Toast.makeText(this,"Submitting",Toast.LENGTH_SHORT)
++
++                //Add to the database
++                val id = databaseWorkouts.push().key
++                databaseWorkouts.child(id!!).setValue(workout)
++
++                //Generate the return intent to go back to main activity
+                 val returnIntent = Intent().putExtra(WORKOUT_NAME, workout)
+                 setResult(RESULT_OK, returnIntent)
+                 finish()
+Index: app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.healthimprovementapp\r\n\r\nimport android.annotation.SuppressLint\r\nimport android.app.Activity\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.text.TextUtils\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.*\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.Workout\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.WorkoutExercisesActivity\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.WorkoutList\r\nimport com.google.firebase.database.*\r\nimport kotlinx.android.synthetic.main.workout_list.*\r\nimport java.util.*\r\n\r\nclass WorkoutActivity : AppCompatActivity() {\r\n\r\n    private lateinit var editTextName: EditText\r\n    private lateinit var buttonAddWorkout: Button\r\n    private lateinit var listViewWorkouts: ListView\r\n    private lateinit var workoutListAdapter : WorkoutListAdapter\r\n    private lateinit var databaseWorkouts: DatabaseReference\r\n\r\n    private lateinit var uid: String\r\n    private lateinit var workoutType : String\r\n\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_workout)\r\n\r\n        //Initializes UID and Workout Type here based on intent provided\r\n        uid = intent.getStringExtra(USER_ID) as String\r\n        workoutType = intent.getStringExtra(WORKOUT_TYPE) as String\r\n\r\n        //Access the workout's node in the database\r\n        databaseWorkouts = FirebaseDatabase.getInstance().getReference(\"workout\").child(workoutType)\r\n\r\n        editTextName = findViewById<View>(R.id.customWorkoutName) as EditText\r\n        buttonAddWorkout = findViewById<View>(R.id.addCustomWorkoutButton) as Button\r\n\r\n        //setup list view and adapter\r\n        listViewWorkouts = findViewById<View>(R.id.listViewWorkouts) as ListView\r\n        workoutListAdapter = WorkoutListAdapter(this)\r\n        listViewWorkouts.adapter = workoutListAdapter\r\n\r\n        buttonAddWorkout.setOnClickListener {\r\n            addWorkout()\r\n        }\r\n\r\n        listViewWorkouts.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->\r\n            //TODO -> (if we have time) add functionality to first show all of the exercises in the workout,\r\n            //and if the user clicks the same workout again in the list then launch the activity.\r\n\r\n            //get the selected workout\r\n            val workout = workoutListAdapter.getItem(i)\r\n\r\n            //create an intent and package it up\r\n            val intent = Intent(applicationContext, WorkoutExercisesActivity::class.java)//TODO: NEED TO FINISH THIS ACTIVITY. IT SHOULD LIST THE WORKOUT_NAME, EXERCISES, REPS, WEIGHTS, SETS,\r\n            // AND THEN GIVE A WAY FOR THE USER TO FILL IN WHAT THEY ACCOMPLISHED AND THEN SAVE IT TO THE DATABASE. A HISTORY OF OLD WORKOUTS SHOULD BE ADDED TO WELCOME.KT FOR VIEWING.\r\n            intent.putExtra(WORKOUT_NAME, workout)\r\n            intent.putExtra(USER_ID, uid)\r\n            startActivity(intent)\r\n        }\r\n\r\n        //TODO -> figure out how to set two types of listeners or create an options menu to start an edit list mode\r\n        //to handle deleting the workouts\r\n\r\n//        listViewWorkouts.onItemLongClickListener = AdapterView.OnItemLongClickListener { adapterView, view, i, l ->\r\n//            val workout = workouts[i]\r\n//            //TODO: Make a dialog box pop up asking \"Are you sure you want to delete this workout?\" before actually deleting it\r\n//            deleteWorkout(workout)\r\n//            true\r\n//        }\r\n    }\r\n\r\n    private fun addWorkout() {\r\n        Toast.makeText(this, \"Adding a custom workout...\", Toast.LENGTH_LONG).show()\r\n        val name = editTextName.text.toString()\r\n\r\n        if (!TextUtils.isEmpty(name)) {\r\n            val id = databaseWorkouts.push().key\r\n\r\n            val exerciseListIntent = Intent(this, AddWorkoutActivity::class.java)\r\n            exerciseListIntent.putExtra(WORKOUT_ID, id)\r\n            exerciseListIntent.putExtra(WORKOUT_NAME, name)\r\n            editTextName.setText(\"\")\r\n            startActivityForResult(exerciseListIntent, ADD_WORKOUT_REQUEST)\r\n\r\n            //The workout is actually added in the onActivityResult function\r\n        }\r\n        else {\r\n            Toast.makeText(this, \"Please enter a workout name\", Toast.LENGTH_LONG).show()\r\n        }\r\n    }\r\n\r\n    @SuppressLint(\"MissingSuperCall\")\r\n    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {\r\n\r\n        if (requestCode == ADD_WORKOUT_REQUEST) {\r\n            if (resultCode == RESULT_OK && data != null) {\r\n                //Get workout from intent\r\n                val workout = data?.getParcelableExtra<Workout>(WORKOUT_NAME)!!\r\n                workoutListAdapter.add(workout)\r\n\r\n                val workoutString = workoutListAdapter.count.toString()\r\n                Log.i(TAG, \"Workout received and added in onActivityResult: $workoutString\")\r\n            } else {\r\n                Log.i(TAG, \"Workout not received, request code not RESULT_OK or data is null\")\r\n                Toast.makeText(this,\r\n                    \"Were sorry something went wrong. Please try to add your workout again!\", Toast.LENGTH_LONG)\r\n            }\r\n        }\r\n    }\r\n\r\n    //TODO: Implement this\r\n    private fun deleteWorkout(workout: Workout) {\r\n        Toast.makeText(this, \"Deleting a custom workout...\", Toast.LENGTH_LONG).show()\r\n    }\r\n\r\n\r\n    override  fun onStart() {\r\n        super.onStart()\r\n\r\n        databaseWorkouts.addValueEventListener(object : ValueEventListener {\r\n            override fun onDataChange(dataSnapshot: DataSnapshot) {\r\n\r\n                //TODO -> had to delete the workouts.clear() (changed to workoutListAdapter.clear()) so the workouts would show up in the list\r\n                var workoutFromDatabase: Workout? = null\r\n                for (postSnapshot in dataSnapshot.child(uid!!).children) {\r\n                    try {\r\n                        workoutFromDatabase = postSnapshot.getValue(Workout::class.java)\r\n                    } catch (e: Exception) {\r\n                        Log.e(TAG, e.toString())\r\n                    } finally {\r\n                        workoutListAdapter.add(workoutFromDatabase!!)\r\n                    }\r\n                }\r\n\r\n                //val workoutListAdapter = WorkoutListAdaptor(this@WorkoutActivity ,workouts) //Reworked the workout manager to implement all of the exercises as a string and added an add function\r\n                //listViewWorkouts.adapter = workoutListAdapter\r\n            }\r\n\r\n            override fun onCancelled(error: DatabaseError) {\r\n                TODO(\"Not yet implemented\")\r\n            }\r\n        })\r\n    }\r\n\r\n\r\n    companion object {\r\n        const val TAG = \"Mine-WorkoutActivity\"\r\n        const val WORKOUT_NAME = \"WORKOUT_NAME\"\r\n        const val WORKOUT_ID = \"WORKOUT_ID\"\r\n        const val WORKOUT_EXERCISES = \"WORKOUT_EXERCISES\"\r\n        const val ADD_WORKOUT_REQUEST = 0\r\n        val USER_ID = \"USER_ID\"\r\n        val WORKOUT_TYPE = \"WORKOUT_TYPE\"\r\n        val BULK_UP = \"BULK_UP\"\r\n        val WEIGHT_LOSS = \"WEIGHT_LOSS\"\r\n        val ENDURANCE = \"ENDURANCE\"\r\n        val FLEXIBILITY = \"FLEXIBILITY\"\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt	(revision 3629d9f903088e8aa83367d402855b015d3dd7a6)
++++ app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt	(date 1606835745472)
+@@ -37,7 +37,7 @@
+         workoutType = intent.getStringExtra(WORKOUT_TYPE) as String
+ 
+         //Access the workout's node in the database
+-        databaseWorkouts = FirebaseDatabase.getInstance().getReference("workout").child(workoutType)
++        databaseWorkouts = FirebaseDatabase.getInstance().getReference(workoutType).child(uid)
+ 
+         editTextName = findViewById<View>(R.id.customWorkoutName) as EditText
+         buttonAddWorkout = findViewById<View>(R.id.addCustomWorkoutButton) as Button
+@@ -87,6 +87,9 @@
+             val exerciseListIntent = Intent(this, AddWorkoutActivity::class.java)
+             exerciseListIntent.putExtra(WORKOUT_ID, id)
+             exerciseListIntent.putExtra(WORKOUT_NAME, name)
++            exerciseListIntent.putExtra(WORKOUT_TYPE, workoutType)
++            exerciseListIntent.putExtra(USER_ID, uid)
++            
+             editTextName.setText("")
+             startActivityForResult(exerciseListIntent, ADD_WORKOUT_REQUEST)
+ 
+Index: app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Mon Nov 30 22:46:15 EST 2020\r\nbase.0=C\\:\\\\Users\\\\Omar\\\\Documents\\\\CMSC436\\\\cmsc436-oshawqi\\\\CMSC436HealthImprovementApp\\\\app\\\\build\\\\intermediates\\\\dex\\\\debug\\\\mergeExtDexDebug\\\\classes.dex\r\npath.1=classes.dex\r\nrenamed.1=classes2.dex\r\npath.0=classes.dex\r\nrenamed.0=classes.dex\r\nbase.1=C\\:\\\\Users\\\\Omar\\\\Documents\\\\CMSC436\\\\cmsc436-oshawqi\\\\CMSC436HealthImprovementApp\\\\app\\\\build\\\\intermediates\\\\dex\\\\debug\\\\mergeProjectDexDebug\\\\classes.dex\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(revision 3629d9f903088e8aa83367d402855b015d3dd7a6)
++++ app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(date 1606860654250)
+@@ -1,4 +1,4 @@
+-#Mon Nov 30 22:46:15 EST 2020
++#Tue Dec 01 17:10:54 EST 2020
+ base.0=C\:\\Users\\Omar\\Documents\\CMSC436\\cmsc436-oshawqi\\CMSC436HealthImprovementApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+ path.1=classes.dex
+ renamed.1=classes2.dex
+Index: app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>17\r\n2
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab	(revision 3629d9f903088e8aa83367d402855b015d3dd7a6)
++++ app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab	(date 1606860653484)
+@@ -1,2 +1,2 @@
+-17
+-2
+\ No newline at end of file
++32
++17
+\ No newline at end of file

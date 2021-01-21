@@ -1,0 +1,92 @@
+Index: app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.healthimprovementapp\r\n\r\nimport android.annotation.SuppressLint\r\nimport android.app.Activity\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.text.TextUtils\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.*\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.Workout\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.WorkoutExercisesActivity\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.WorkoutList\r\nimport com.google.firebase.database.*\r\nimport kotlinx.android.synthetic.main.workout_list.*\r\nimport java.util.*\r\n\r\nclass WorkoutActivity : AppCompatActivity() {\r\n\r\n    private lateinit var editTextName: EditText\r\n    private lateinit var buttonAddWorkout: Button\r\n    private lateinit var listViewWorkouts: ListView\r\n    private lateinit var workoutListAdapter : WorkoutListAdapter\r\n\r\n    private lateinit var uid: String\r\n    private lateinit var workoutType : String\r\n\r\n    private lateinit var mDatabase : DatabaseReference\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_workout)\r\n\r\n        //Initializes UID and Workout Type here based on intent provided\r\n        uid = intent.getStringExtra(USER_ID) as String\r\n        workoutType = intent.getStringExtra(WORKOUT_TYPE) as String\r\n\r\n        //Access the workout's node in the database\r\n        mDatabase = FirebaseDatabase.getInstance().getReference(\"workouts\").child(workoutType)\r\n\r\n        //Set up views for adding workouts\r\n        editTextName = findViewById<View>(R.id.customWorkoutName) as EditText\r\n        buttonAddWorkout = findViewById<View>(R.id.addCustomWorkoutButton) as Button\r\n\r\n        //setup list view and adapter\r\n        listViewWorkouts = findViewById<View>(R.id.listViewWorkouts) as ListView\r\n        workoutListAdapter = WorkoutListAdapter(this)\r\n        listViewWorkouts.adapter = workoutListAdapter\r\n\r\n        buttonAddWorkout.setOnClickListener {\r\n            addWorkout()\r\n        }\r\n\r\n        listViewWorkouts.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->\r\n            //TODO -> (if we have time) add functionality to first show all of the exercises in the workout,\r\n            //and if the user clicks the same workout again in the list then launch the activity.\r\n\r\n            //get the selected workout\r\n            val workout = workoutListAdapter.getItem(i)\r\n\r\n            //create an intent and package it up\r\n            val intent = Intent(applicationContext, WorkoutExercisesActivity::class.java)//TODO: NEED TO FINISH THIS ACTIVITY. IT SHOULD LIST THE WORKOUT_NAME, EXERCISES, REPS, WEIGHTS, SETS,\r\n            // AND THEN GIVE A WAY FOR THE USER TO FILL IN WHAT THEY ACCOMPLISHED AND THEN SAVE IT TO THE DATABASE. A HISTORY OF OLD WORKOUTS SHOULD BE ADDED TO WELCOME.KT FOR VIEWING.\r\n            intent.putExtra(WORKOUT_NAME, workout)\r\n            intent.putExtra(USER_ID, uid)\r\n            startActivity(intent)\r\n        }\r\n\r\n        //TODO -> figure out how to set two types of listeners or create an options menu to start an edit list mode\r\n        //to handle deleting the workouts\r\n    }\r\n\r\n    private fun addWorkout() {\r\n        val name = editTextName.text.toString()\r\n\r\n        if (!TextUtils.isEmpty(name)) {\r\n            Toast.makeText(this, \"Adding a custom workout...\", Toast.LENGTH_LONG).show()\r\n            val id = mDatabase.push().key\r\n\r\n            val exerciseListIntent = Intent(this, AddWorkoutActivity::class.java)\r\n            exerciseListIntent.putExtra(WORKOUT_ID, id)\r\n            exerciseListIntent.putExtra(WORKOUT_NAME, name)\r\n            exerciseListIntent.putExtra(WORKOUT_TYPE, workoutType)\r\n            exerciseListIntent.putExtra(USER_ID, uid)\r\n\r\n            editTextName.setText(\"\")\r\n            startActivityForResult(exerciseListIntent, ADD_WORKOUT_REQUEST)\r\n\r\n            //The workout is actually added in the onActivityResult function\r\n        }\r\n        else {\r\n            Toast.makeText(this, \"Please enter a workout name\", Toast.LENGTH_LONG).show()\r\n        }\r\n    }\r\n\r\n    @SuppressLint(\"MissingSuperCall\")\r\n    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {\r\n\r\n        if (requestCode == ADD_WORKOUT_REQUEST) {\r\n            if (resultCode == RESULT_OK && data != null) {\r\n                //Get workout from intent\r\n                val workout = data?.getParcelableExtra<Workout>(WORKOUT_NAME)!!\r\n                //workout.writeToDatabase(mDatabase!!)                                                              //Am now adding to database in AddWorkoutActivity.kt\r\n                workoutListAdapter.add(workout)\r\n\r\n\r\n                Log.i(TAG, \"Workout received and added in onActivityResult\")\r\n            } else {\r\n                Log.i(TAG, \"Workout not received, request code not RESULT_OK or data is null\")\r\n                Toast.makeText(this,\r\n                    \"Were sorry something went wrong. Please try to add your workout again!\", Toast.LENGTH_LONG)\r\n            }\r\n        }\r\n    }\r\n\r\n    //TODO: Implement this\r\n    private fun deleteWorkout(workout: Workout) {\r\n        Toast.makeText(this, \"Deleting a custom workout...\", Toast.LENGTH_LONG).show()\r\n    }\r\n\r\n\r\n    override  fun onStart() {\r\n        super.onStart()\r\n\r\n        mDatabase.addValueEventListener(object : ValueEventListener {\r\n            override fun onDataChange(dataSnapshot: DataSnapshot) {\r\n\r\n                //TODO -> had to delete the workouts.clear() (changed to workoutListAdapter.clear()) so the workouts would show up in the list\r\n                var workoutFromDatabase: Workout? = null\r\n                for (postSnapshot in dataSnapshot.children) {\r\n                    try {\r\n                        workoutFromDatabase = postSnapshot.getValue(Workout::class.java)\r\n                        Log.i(TAG, workoutFromDatabase.toString())\r\n                    } catch (e: Exception) {\r\n                        Log.e(TAG, e.toString())\r\n                    } finally {\r\n                        //workoutListAdapter.add(workoutFromDatabase!!)\r\n                    }\r\n                }\r\n\r\n                //val workoutListAdapter = WorkoutListAdaptor(this@WorkoutActivity ,workouts) //Reworked the workout manager to implement all of the exercises as a string and added an add function\r\n                //listViewWorkouts.adapter = workoutListAdapter\r\n            }\r\n\r\n            override fun onCancelled(error: DatabaseError) {\r\n                TODO(\"Not yet implemented\")\r\n            }\r\n        })\r\n    }\r\n\r\n\r\n    companion object {\r\n        const val TAG = \"Mine-WorkoutActivity\"\r\n        const val WORKOUT_NAME = \"WORKOUT_NAME\"\r\n        const val WORKOUT_ID = \"WORKOUT_ID\"\r\n        const val WORKOUT_EXERCISES = \"WORKOUT_EXERCISES\"\r\n        const val ADD_WORKOUT_REQUEST = 0\r\n        val USER_ID = \"USER_ID\"\r\n        val WORKOUT_TYPE = \"WORKOUT_TYPE\"\r\n        val BULK_UP = \"BULK_UP\"\r\n        val WEIGHT_LOSS = \"WEIGHT_LOSS\"\r\n        val ENDURANCE = \"ENDURANCE\"\r\n        val FLEXIBILITY = \"FLEXIBILITY\"\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt	(revision 626544c18c1689ad8f66c60f70038905b2779321)
++++ app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt	(date 1606961287471)
+@@ -37,7 +37,7 @@
+         workoutType = intent.getStringExtra(WORKOUT_TYPE) as String
+ 
+         //Access the workout's node in the database
+-        mDatabase = FirebaseDatabase.getInstance().getReference("workouts").child(workoutType)
++        mDatabase = FirebaseDatabase.getInstance().getReference(uid).child(workoutType)
+ 
+         //Set up views for adding workouts
+         editTextName = findViewById<View>(R.id.customWorkoutName) as EditText
+@@ -97,11 +97,12 @@
+     @SuppressLint("MissingSuperCall")
+     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+ 
++        /*
+         if (requestCode == ADD_WORKOUT_REQUEST) {
+             if (resultCode == RESULT_OK && data != null) {
+                 //Get workout from intent
+                 val workout = data?.getParcelableExtra<Workout>(WORKOUT_NAME)!!
+-                //workout.writeToDatabase(mDatabase!!)                                                              //Am now adding to database in AddWorkoutActivity.kt
++                workout.writeToDatabase(mDatabase!!)
+                 workoutListAdapter.add(workout)
+ 
+ 
+@@ -111,7 +112,7 @@
+                 Toast.makeText(this,
+                     "Were sorry something went wrong. Please try to add your workout again!", Toast.LENGTH_LONG)
+             }
+-        }
++        }*/
+     }
+ 
+     //TODO: Implement this
+Index: app/src/main/java/com/example/healthimprovementapp/WorkoutListAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.healthimprovementapp\r\n\r\nimport android.content.Context\r\nimport android.util.Log\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.BaseAdapter\r\nimport android.widget.RelativeLayout\r\nimport android.widget.TextView\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.Workout\r\n\r\nclass WorkoutListAdapter(private val context : Context) : BaseAdapter() {\r\n\r\n    private val workouts : ArrayList<Workout> = ArrayList<Workout>()\r\n\r\n    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {\r\n\r\n        val workout = workouts[position]\r\n        val viewHolder : ViewHolder\r\n\r\n        if (convertView == null) {\r\n\r\n            viewHolder = ViewHolder()\r\n            val mLayoutInflater = LayoutInflater.from(context)\r\n            val newView = mLayoutInflater.inflate(R.layout.workout_list, parent, false)\r\n\r\n            newView.tag = viewHolder\r\n            viewHolder.mItemLayout = newView.findViewById(R.id.workoutList)\r\n            viewHolder.mTitleView = newView.findViewById(R.id.workoutName)\r\n            viewHolder.mExercisesView = newView.findViewById(R.id.workoutExercises)\r\n\r\n        } else {\r\n            viewHolder = convertView.tag as ViewHolder\r\n        }\r\n\r\n        //fill in default data for workouts\r\n        viewHolder.mTitleView!!.text = workout.workoutName\r\n        viewHolder.mExercisesView!!.text = exerciseString(workout)\r\n\r\n        return viewHolder.mItemLayout!!\r\n    }\r\n\r\n    private fun exerciseString(workout : Workout) : String {\r\n        val roughString = workout.workoutExercises.toString() //returns [ s1, s2, s3, ..., sn]\r\n        return roughString.substring(1, roughString.length-1)\r\n    }\r\n\r\n    fun add(workout : Workout) {\r\n        Log.i(TAG, \"Adding Workout to adapter\")\r\n        workouts.add(workout)\r\n        notifyDataSetChanged()\r\n    }\r\n\r\n    fun addAll(inWorkouts : List<Workout>) {\r\n        workouts.addAll(inWorkouts)\r\n    }\r\n\r\n    override fun getItem(position: Int): Workout {\r\n        return workouts[position]\r\n    }\r\n\r\n    override fun getItemId(position: Int): Long {\r\n        return position.toLong()\r\n    }\r\n\r\n    override fun getCount(): Int {\r\n        return workouts.size\r\n    }\r\n\r\n    internal class ViewHolder {\r\n        var mItemLayout : RelativeLayout? = null\r\n        var mTitleView : TextView? = null\r\n        var mExercisesView : TextView? = null\r\n    }\r\n\r\n    companion object {\r\n        val TAG = \"Mine-WorkoutListAdapter\"\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/healthimprovementapp/WorkoutListAdapter.kt	(revision 626544c18c1689ad8f66c60f70038905b2779321)
++++ app/src/main/java/com/example/healthimprovementapp/WorkoutListAdapter.kt	(date 1606950936815)
+@@ -52,6 +52,10 @@
+         notifyDataSetChanged()
+     }
+ 
++    fun clear() {
++        workouts.clear()
++    }
++
+     fun addAll(inWorkouts : List<Workout>) {
+         workouts.addAll(inWorkouts)
+     }
+Index: app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Tue Dec 01 22:23:28 EST 2020\r\nbase.0=C\\:\\\\Users\\\\Omar\\\\Documents\\\\CMSC436\\\\cmsc436-oshawqi\\\\CMSC436HealthImprovementApp\\\\app\\\\build\\\\intermediates\\\\dex\\\\debug\\\\mergeExtDexDebug\\\\classes.dex\r\npath.1=classes.dex\r\nrenamed.1=classes2.dex\r\npath.0=classes.dex\r\nrenamed.0=classes.dex\r\nbase.1=C\\:\\\\Users\\\\Omar\\\\Documents\\\\CMSC436\\\\cmsc436-oshawqi\\\\CMSC436HealthImprovementApp\\\\app\\\\build\\\\intermediates\\\\dex\\\\debug\\\\mergeProjectDexDebug\\\\classes.dex\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(revision 626544c18c1689ad8f66c60f70038905b2779321)
++++ app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(date 1606961288326)
+@@ -1,4 +1,4 @@
+-#Tue Dec 01 22:23:28 EST 2020
++#Wed Dec 02 21:08:08 EST 2020
+ base.0=C\:\\Users\\Omar\\Documents\\CMSC436\\cmsc436-oshawqi\\CMSC436HealthImprovementApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+ path.1=classes.dex
+ renamed.1=classes2.dex
+Index: app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>25\r\n8
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab	(revision 626544c18c1689ad8f66c60f70038905b2779321)
++++ app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab	(date 1606961288194)
+@@ -1,2 +1,2 @@
+-25
+-8
+\ No newline at end of file
++55
++38
+\ No newline at end of file

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/workoutList" android:background="@drawable/button_selector">
+
+    <TextView
+        android:text="TESTING TEXT 1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/workoutName"
+        android:textSize="20dp"
+        android:gravity="left"
+        android:textColor="@color/white"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:fadingEdge="horizontal"/>
+
+    <TextView
+        android:text="TESTING TEXT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/workoutExercises"
+        android:layout_below="@+id/workoutName"
+        android:gravity="left"
+        android:textColor="@color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="5dp"
+        android:ellipsize="end"
+        android:fadingEdge="horizontal"/>
+
+</RelativeLayout>

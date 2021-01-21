@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "521275927252",
+    "firebase_url": "https://cmsc436healthimprovementapp.firebaseio.com",
+    "project_id": "cmsc436healthimprovementapp",
+    "storage_bucket": "cmsc436healthimprovementapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521275927252:android:1eaab83284eeb6ff1be941",
+        "android_client_info": {
+          "package_name": "com.example.healthimprovementapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521275927252-fpsea1c4pp6207e7uunfsdnib912c1u0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhKSRWrmMC2VIfHPtdo-hlz4_TwJ0ycNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521275927252-fpsea1c4pp6207e7uunfsdnib912c1u0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

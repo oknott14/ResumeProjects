@@ -1,0 +1,290 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM__Default_Changelist_.xml	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM__Default_Changelist_.xml	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
+@@ -1,154 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]" date="1606577473623" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/28/2020 10:31 AM [Default Changelist]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/source-to-classes.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/subtypes.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value=".gradle/6.1.1/fileHashes/fileHashes.lock" />
+-    <option name="AFTER_PATH" value=".gradle/6.1.1/fileHashes/fileHashes.lock" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/fileHashes.lock" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/supertypes.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/file-to-id.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/last-build.bin" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/last-build.bin" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/last-build.bin" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/lookups.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/internal-name-to-source.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/subtypes.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/supertypes.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/file-to-id.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.len" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.len" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/id-to-file.tab.len" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value=".gradle/6.1.1/executionHistory/executionHistory.lock" />
+-    <option name="AFTER_PATH" value=".gradle/6.1.1/executionHistory/executionHistory.lock" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/executionHistory.lock" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/proto.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value=".gradle/6.1.1/executionHistory/executionHistory.bin" />
+-    <option name="AFTER_PATH" value=".gradle/6.1.1/executionHistory/executionHistory.bin" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/executionHistory.bin" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/source-to-output.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/class-fq-name-to-source.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/proto.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+-    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/buildOutputCleanup.lock" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/source-to-output.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/internal-name-to-source.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/id-to-file.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/id-to-file.tab.keystream" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/lookups.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/source-to-classes.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/class-fq-name-to-source.tab" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/id-to-file.tab.keystream.len" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/id-to-file.tab.values.at" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value=".gradle/6.1.1/fileHashes/fileHashes.bin" />
+-    <option name="AFTER_PATH" value=".gradle/6.1.1/fileHashes/fileHashes.bin" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/fileHashes.bin" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="app/build/kotlin/compileDebugKotlin/build-history.bin" />
+-    <option name="AFTER_PATH" value="app/build/kotlin/compileDebugKotlin/build-history.bin" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/build-history.bin" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM__Default_Changelist_.xml
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM__Default_Changelist_.xml	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
++++ .idea/shelf/Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM__Default_Changelist_.xml	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM_[Default_Changelist]" date="1606590405901" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 11/28/2020 2:06 PM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/shelved.patch	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
++++ .idea/shelf/Uncommitted_changes_before_Update_at_11_28_2020_10_31_AM_[Default_Changelist]/shelved.patch	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
+@@ -1,86 +0,0 @@
+-Index: app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.healthimprovementapp\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.text.TextUtils\r\nimport android.util.Log\r\nimport android.view.View\r\nimport android.widget.*\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.ExerciseList\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.Workout\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.WorkoutExercisesActivity\r\nimport com.example.healthimprovementapp.com.example.healthimprovementapp.WorkoutListAdaptor\r\nimport com.google.firebase.database.*\r\nimport java.lang.Exception\r\nimport java.util.*\r\n\r\nclass WorkoutActivity : AppCompatActivity() {\r\n    private lateinit var editTextName: EditText\r\n    private lateinit var buttonAddWorkout: Button\r\n    internal lateinit var listViewWorkouts: ListView\r\n\r\n    internal lateinit var workouts: MutableList<Workout>\r\n    private lateinit var mWorkoutListAdaptor: WorkoutListAdaptor\r\n    private lateinit var databaseWorkouts: DatabaseReference\r\n\r\n    private var uid: String? = null //TODO (nothing) but I changed this to a nullable variable, it can definitely be changed back if needed\r\n    private var workoutType : String? = null\r\n\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_workout)\r\n\r\n        //Access the workouts node in the database\r\n        databaseWorkouts = FirebaseDatabase.getInstance().getReference(\"workouts\")\r\n\r\n        editTextName = findViewById<View>(R.id.customWorkoutName) as EditText\r\n        buttonAddWorkout = findViewById<View>(R.id.addCustomWorkoutButton) as Button\r\n        listViewWorkouts = findViewById<View>(R.id.listViewWorkouts) as ListView\r\n\r\n        workouts = ArrayList()\r\n\r\n        //initialize UID and Workout Type here based on intent provided!!!!!!!\r\n        //TODO - possibly handle the event that the intent does not include one of these fields or is null\r\n        uid = intent.getStringExtra(USER_ID)\r\n        workoutType = intent.getStringExtra(WORKOUT_TYPE)\r\n\r\n        buttonAddWorkout.setOnClickListener {\r\n            addWorkout()\r\n        }\r\n\r\n        listViewWorkouts.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->\r\n\r\n            //get the selected workout\r\n            val workout = workouts[i]\r\n\r\n            //create an intent and package it up\r\n            val intent = Intent(applicationContext, WorkoutExercisesActivity::class.java)//TODO: NEED TO FINISH THIS ACTIVITY\r\n            intent.putExtra(WORKOUT_ID, workout.workoutId)\r\n            intent.putExtra(WORKOUT_NAME, workout.workoutName)\r\n            intent.putExtra(WORKOUT_EXERCISES, workout.workoutExercises[0].toString())//TODO: FIGURE OUT HOW TO PASS THE ARRAYLIST\r\n            startActivity(intent)\r\n        }\r\n\r\n        listViewWorkouts.onItemLongClickListener = AdapterView.OnItemLongClickListener { adapterView, view, i, l ->\r\n            val workout = workouts[i]\r\n            deleteWorkout(workout)\r\n            true\r\n\r\n\r\n        }\r\n\r\n\r\n    }\r\n\r\n    //TODO: Finish implementing this\r\n    private fun addWorkout() {\r\n        Toast.makeText(this, \"Adding a custom workout...\", Toast.LENGTH_LONG).show()\r\n        val name = editTextName.text.toString()\r\n\r\n        if (!TextUtils.isEmpty(name)) {\r\n            val id = databaseWorkouts.push().key\r\n\r\n            val workout = Workout(id!!, name, emptyList())\r\n\r\n            databaseWorkouts.child(uid!!).child(id).setValue(workout)\r\n\r\n            editTextName.setText(\"\")\r\n\r\n            Toast.makeText(this, \"Workout added\", Toast.LENGTH_LONG).show()\r\n\r\n            //TODO -> add workout to list\r\n\r\n        }\r\n        else {\r\n            Toast.makeText(this, \"Please enter a workout name\", Toast.LENGTH_LONG).show()\r\n        }\r\n    }\r\n\r\n    //TODO: Implement this\r\n    private fun deleteWorkout(workout: Workout) {\r\n        Toast.makeText(this, \"Deleting a custom workout...\", Toast.LENGTH_LONG).show()\r\n    }\r\n\r\n\r\n    override  fun onStart() {\r\n        super.onStart()\r\n\r\n        databaseWorkouts.addValueEventListener(object: ValueEventListener {\r\n            override fun onDataChange(dataSnapshot: DataSnapshot) {\r\n                workouts.clear()\r\n\r\n                var workout: Workout? = null\r\n                for (postSnapshot in dataSnapshot.child(uid!!).children) {\r\n                    try {\r\n                        workout = postSnapshot.getValue(Workout::class.java)\r\n                    } catch (e: Exception) {\r\n                        Log.e(TAG, e.toString())\r\n                    } finally {\r\n                        workouts.add(workout!!)\r\n                    }\r\n                }\r\n\r\n                val workoutListAdapter = WorkoutListAdaptor(this@WorkoutActivity ,workouts) //Reworked the workout manager to implement all of the exercises as a string and added an add function\r\n                listViewWorkouts.adapter = workoutListAdapter\r\n            }\r\n\r\n            override fun onCancelled(error: DatabaseError) {\r\n                TODO(\"Not yet implemented\")\r\n            }\r\n        })\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    //TODO: These need to be changed to fit this project\r\n    companion object {\r\n        const val TAG = \"Mine-WorkoutActivity: \"\r\n        const val WORKOUT_NAME = \"com.example.tesla.myhomelibrary.authorname\"\r\n        const val WORKOUT_ID = \"com.example.tesla.myhomelibrary.authorid\"\r\n        const val WORKOUT_EXERCISES = \"com.example.tesla.myhomelibrary.userid\"\r\n        val USER_ID = \"USER_ID\"\r\n        val WORKOUT_TYPE = \"WORKOUT_TYPE\"\r\n        val BULK_UP = \"BULK_UP\"\r\n        val WEIGHT_LOSS = \"WEIGHT_LOSS\"\r\n        val ENDURANCE = \"ENDURANCE\"\r\n        val FLEXIBILITY = \"FLEXIBILITY\"\r\n    }\r\n\r\n\r\n\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt	(revision 73c125bd9c7eed6e073da98e35a9357ca566184e)
+-+++ app/src/main/java/com/example/healthimprovementapp/WorkoutActivity.kt	(date 1606348373296)
+-@@ -19,9 +19,7 @@
+-     private lateinit var editTextName: EditText
+-     private lateinit var buttonAddWorkout: Button
+-     internal lateinit var listViewWorkouts: ListView
+--
+--    internal lateinit var workouts: MutableList<Workout>
+--    private lateinit var mWorkoutListAdaptor: WorkoutListAdaptor
+-+    internal lateinit var workouts: ArrayList<Workout>
+-     private lateinit var databaseWorkouts: DatabaseReference
+- 
+-     private var uid: String? = null //TODO (nothing) but I changed this to a nullable variable, it can definitely be changed back if needed
+-@@ -74,7 +72,7 @@
+- 
+-     }
+- 
+--    //TODO: Finish implementing this
+-+    //TODO: Finish implementing this - ensure a duplicate name is not entered. This func. should call a new activity.
+-     private fun addWorkout() {
+-         Toast.makeText(this, "Adding a custom workout...", Toast.LENGTH_LONG).show()
+-         val name = editTextName.text.toString()
+-@@ -82,6 +80,11 @@
+-         if (!TextUtils.isEmpty(name)) {
+-             val id = databaseWorkouts.push().key
+- 
+-+            val exerciseListIntent = Intent(this, ActivityCreateExerciseList::class.java)
+-+            exerciseListIntent.putExtra(WORKOUT_ID, id)
+-+            exerciseListIntent.putExtra(WORKOUT_NAME, name)
+-+            startActivity(exerciseListIntent)
+-+
+-             val workout = Workout(id!!, name, emptyList())
+- 
+-             databaseWorkouts.child(uid!!).child(id).setValue(workout)
+-@@ -141,10 +144,10 @@
+- 
+-     //TODO: These need to be changed to fit this project
+-     companion object {
+--        const val TAG = "Mine-WorkoutActivity: "
+--        const val WORKOUT_NAME = "com.example.tesla.myhomelibrary.authorname"
+--        const val WORKOUT_ID = "com.example.tesla.myhomelibrary.authorid"
+--        const val WORKOUT_EXERCISES = "com.example.tesla.myhomelibrary.userid"
+-+        const val TAG = "HealthImprovementApp Tag"
+-+        const val WORKOUT_NAME = "WORKOUT_NAME"
+-+        const val WORKOUT_ID = "WORKOUT_ID"
+-+        const val WORKOUT_EXERCISES = "WORKOUT_EXERCISES"
+-         val USER_ID = "USER_ID"
+-         val WORKOUT_TYPE = "WORKOUT_TYPE"
+-         val BULK_UP = "BULK_UP"
+-Index: app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>15\r\n2
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab	(revision 73c125bd9c7eed6e073da98e35a9357ca566184e)
+-+++ app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab	(date 1606343123335)
+-@@ -1,2 +1,2 @@
+--15
+--2
+-\ No newline at end of file
+-+16
+-+3
+-\ No newline at end of file
+-Index: app/src/main/java/com/example/healthimprovementapp/ActivityCreateExerciseList.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- app/src/main/java/com/example/healthimprovementapp/ActivityCreateExerciseList.kt	(date 1606348373302)
+-+++ app/src/main/java/com/example/healthimprovementapp/ActivityCreateExerciseList.kt	(date 1606348373302)
+-@@ -0,0 +1,5 @@
+-+package com.example.healthimprovementapp
+-+
+-+class ActivityCreateExerciseList {
+-+    
+-+}
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM_[Default_Changelist]/shelved.patch
+===================================================================
+--- .idea/shelf/Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM_[Default_Changelist]/shelved.patch	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
++++ .idea/shelf/Uncommitted_changes_before_Checkout_at_11_28_2020_2_06_PM_[Default_Changelist]/shelved.patch	(revision c79da843c1e6919bf2f98fe4faec04a8f40c5bb8)
+@@ -1,24 +0,0 @@
+-Index: .idea/gradle.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"1.8\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+---- .idea/gradle.xml	(revision 08144a9beeb5d97124966dfe81e563a4e9ecc0f0)
+-+++ .idea/gradle.xml	(date 1606590320133)
+-@@ -1,5 +1,6 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-+  <component name="GradleMigrationSettings" migrationVersion="1" />
+-   <component name="GradleSettings">
+-     <option name="linkedExternalProjectsSettings">
+-       <GradleProjectSettings>
+-@@ -14,6 +15,7 @@
+-           </set>
+-         </option>
+-         <option name="resolveModulePerSourceSet" value="false" />
+-+        <option name="useQualifiedModuleNames" value="true" />
+-       </GradleProjectSettings>
+-     </option>
+-   </component>

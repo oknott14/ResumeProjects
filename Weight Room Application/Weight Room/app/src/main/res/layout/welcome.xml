@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/background"
+    >
+
+    <TextView
+        android:id="@+id/fitness_goal_TextView"
+        android:text="@string/choose_a_workout_option"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/healthImprovementString"
+        android:text="@string/health_improvement"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:layout_below="@+id/fitness_goal_TextView"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- divider snippet from https://stackoverflow.com/questions/5049852/android-drawing-separator-divider-line-in-layout -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_below="@id/healthImprovementString"/>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_below="@id/healthImprovementString"
+        android:id="@+id/Wrapper">
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/weight_loss_button"
+        android:text="@string/weight_loss"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/button_bg"
+        />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/flexibility_button"
+        android:text="@string/flexibility"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/weight_loss_button"
+        android:layout_weight="1"
+        android:background="@drawable/button_bg"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/strengthTrainingString"
+        android:text="@string/strength_training"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/Wrapper"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_below="@id/strengthTrainingString"/>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_below="@id/strengthTrainingString"
+        android:id="@+id/Wrapper2">
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/bulk_up_button"
+        android:text="@string/bulk_up"
+        android:textColor="@color/white"
+        android:background="@drawable/button_bg"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/endurance_button"
+        android:text="@string/endurance"
+        android:textColor="@color/white"
+        android:background="@drawable/button_bg"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:layout_toRightOf="@+id/bulk_up_button"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/findWorkoutsView"
+        android:text="@string/find_workouts"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:layout_below="@+id/Wrapper2"
+        android:layout_margin="10dp"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_below="@id/findWorkoutsView"/>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_below="@id/findWorkoutsView"
+        android:id="@+id/Wrapper3">
+    <Button
+        android:id="@+id/history_button"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/findWorkoutsView"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_bg"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:text="@string/view_user_history"
+        android:textColor="@color/white" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:id="@+id/discoverWorkoutsButton"
+        android:text="@string/discover_workouts"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_bg"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/findWorkoutsView"
+        android:layout_toRightOf="@+id/history_button"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_selector"
+        android:padding="10dp"
+        android:text="@string/signout"
+        android:textColor="@color/black" />
+
+
+
+
+</RelativeLayout>

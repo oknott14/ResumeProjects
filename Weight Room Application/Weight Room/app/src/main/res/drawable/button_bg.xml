@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--modified button snippet from https://www.tutorialspoint.com/how-to-create-shadow-in-android-buttons -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gray shadow. -->
+    <item android:left="3dp" android:top="5dp">
+        <shape>
+            <solid android:color="#292929" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- White foreground. -->
+    <item android:bottom="5dp" android:right="3dp">
+        <shape>
+            <solid android:color="#606060" />
+            <corners android:radius="5dp" />
+            <stroke android:width="2px" android:color="#E03A3E"></stroke>
+        </shape>
+    </item>
+</layer-list>
