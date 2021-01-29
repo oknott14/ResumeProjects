@@ -1,3 +1,5 @@
+Disclaimer: This is a newly added directory. Reccomendation requests have not been completed yet.
+
 Above are recommendations from past / current employers, co-workers, and friends. Each document includes a few words and a signature at the end for verification. Of the jobs I have had, I have chosen to include recommendations from the owners of the two companies who had the larges impact on me. For a brief description of what I did, see below:
 
 
