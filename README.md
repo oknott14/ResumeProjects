@@ -11,7 +11,7 @@ CONTACT INFORMATION
 
 ABOUT MYSELF
 
-I am currently a senior attending the University of Maryland College Park. My major is Computer Science with a concentration in Mathematics. Within my major, my interests include application development, big data, human-computer interaction, and machine learning. Personally, I love to fish, ski, surf, and listen to music, and read. I am always trying to learn something new and interesting. Furthermore, I try to always challenge myself. Through my studies at UMD, I have realized that there is no better feeling than conquering a difficult problem. As a senior, I am currently looking for job opportunities starting in the summer of 2022. I have experience with more than 13 languages. Most recently I have worked with C# and Microsoft's ASP.Net. 
+I am currently a senior attending the University of Maryland College Park. My major is Computer Science with a concentration in Mathematics. Within my major, my interests include application development, big data, human-computer interaction, and machine learning. Personally, I love to fish, ski, surf, and listen to music, and read. I am always trying to learn something new and interesting. Furthermore, I try to always challenge myself. Through my studies at UMD, I have realized that there is no better feeling than conquering a difficult problem. I am currently looking for job opportunities starting in the summer of 2022. 
 	
 Thank you for considering me, I hope to hear from you soon!
 
